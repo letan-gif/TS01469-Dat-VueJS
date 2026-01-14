@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <img src="images/corevalue.jpg" class="float-start" alt="" width="304" height="236">
+        <img src="images/spinach_300x300.jpg" class="float-end" alt="" width="304" height="236">
+    </div>
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+    <!-- Default (left-aligned) -->
+    <ul class="pagination" style="margin:20px 0">
+        <li class="page-item">...</li>
+    </ul>
+    <!-- Center-aligned -->
+    <ul class="pagination justify-content-center" style="margin:20px 0">
+        <li class="page-item">...</li>
+    </ul>
+    <!-- Right-aligned -->
+    <ul class="pagination justify-content-end" style="margin:20px 0">
+        <li class="page-item">...</li>
+    </ul>
+    <h3>Sản phẩm 01 <span class="badge bg-secondary">New</span></h3>
+    <div class="container mt-3">
+        <button type="button" class="btn btn-info">
+            Thông báo <span class="badge bg-danger">4</span>
+        </button>
+        <button type="button" class="btn btn-danger">
+            Cảnh báo <span class="badge bg-dark">7</span>
+        </button>
+    </div>
+    <div class="alert alert-primary" role="alert">
+        A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-secondary" role="alert">
+        A simple secondary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-success" role="alert">
+        A simple success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-danger" role="alert">
+        A simple danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-warning" role="alert">
+        A simple warning alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-info" role="alert">
+        A simple info alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-light" role="alert">
+        A simple light alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-dark" role="alert">
+        A simple dark alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <br>
+    
+    <div class="alert alert-danger">
+        <strong>Nguy hiểm!</strong> Bạn cần đọc kỹ <a href="#" class="alert-link">
+            lỗi cảnh báo này</a>.
+    </div>
+    <div class="container mt-3">
+        <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="Hello!">
+            Hover over me!
+        </button>
+    </div>
+    <script>
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+    
+</body>
+
+</html>
