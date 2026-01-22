@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Chi tiết phim & Bình luận</title>
+</head>
+<body class="bg-light">
+   <nav class="navbar navbar-expand-lg sticky-top shadow-sm border-bottom" style="background-color: #e3f2fd;">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="/Assignment 1/images/Logo-phim.png" alt="Logo" width="130">
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold text-primary px-3" href="index.html"><i
+                                class="fa-solid fa-house me-1"></i>Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="DangPhim.html"><i
+                                class="fa-solid fa-cloud-arrow-up text-primary me-1"></i>Đăng phim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="BinhLuan.html"><i
+                                class="fa-solid fa-comments text-primary me-1"></i>Bình luận</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="GioiThieu.html"><i
+                                class="fa-solid fa-address-card text-primary me-1"></i>Giới thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="DanhSach.html"><i
+                                class="fa-solid fa-address-card text-primary me-1"></i>Danh sách</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex align-items-center" id="auth-buttons">
+                    <a href="Dangky.html" class="btn btn-white bg-white border rounded-pill px-4 me-2 shadow-sm">Đăng
+                        ký</a>
+                    <a href="DangNhap.html" class="btn btn-primary rounded-pill px-4 shadow-sm">Đăng nhập</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mt-5">
+        <div class="row bg-white p-4 rounded-4 shadow-sm border-0">
+            <div class="col-md-4">
+                <img id="mainImg" src="" class="img-fluid rounded-4 shadow-sm" alt="Thumbnail">
+            </div>
+            <div class="col-md-8">
+                <h2 id="mainTitle" class="fw-bold text-primary mb-3"></h2>
+                <div class="badge bg-info mb-3">Đang chiếu</div>
+                <hr>
+                <p id="mainContent" class="text-secondary" style="line-height: 1.8; text-align: justify;">
+                    </p>
+            </div>
+        </div>
+
+        <div class="card mt-4 p-4 border-0 shadow-sm rounded-4">
+            <h5 class="fw-bold mb-3"><i class="fa-solid fa-comments me-2 text-primary"></i>Bình luận từ cộng đồng</h5>
+            
+            <div class="mb-3">
+                <textarea id="commentInput" class="form-control border-2 rounded-3" rows="3" placeholder="Chia sẻ cảm nghĩ của bạn về bộ phim này..."></textarea>
+            </div>
+            <div class="text-end">
+                <button id="btnPost" class="btn btn-primary px-5 rounded-pill fw-bold">Gửi bình luận</button>
+            </div>
+
+            <hr class="my-4">
+            <div id="commentBox" class="mt-2">
+                <div class="text-center text-muted py-3">Chưa có bình luận nào. Hãy là người đầu tiên!</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // --- 1. XỬ LÝ HIỂN THỊ THÔNG TIN PHIM ---
+        // Lấy dữ liệu phim đã lưu khi người dùng bấm "Xem phim" ở trang chủ
+        const selectedMovie = JSON.parse(sessionStorage.getItem('selectedMovie'));
+        
+        if (selectedMovie) {
+            // Đổ dữ liệu vào các thẻ HTML tương ứng
+            document.getElementById('mainImg').src = selectedMovie.image;
+            document.getElementById('mainTitle').innerText = selectedMovie.title;
+            
+            // Kiểm tra cả thuộc tính 'content' (phim mẫu) và 'cot' (phim tự đăng)
+            const moTaPhim = selectedMovie.content || selectedMovie.cot || "Phim này chưa có nội dung mô tả chi tiết.";
+            document.getElementById('mainContent').innerText = moTaPhim;
+        } else {
+            // Nếu truy cập trực tiếp mà chưa chọn phim
+            document.getElementById('mainContent').innerHTML = `
+                <div class='alert alert-warning'>
+                    <i class="fa-solid fa-triangle-exclamation me-2"></i>
+                    Vui lòng chọn một bộ phim từ trang chủ để xem thông tin chi tiết!
+                </div>`;
+        }
+
+        // --- 2. XỬ LÝ TRẠNG THÁI ĐĂNG NHẬP TRÊN NAVBAR ---
+        const authSection = document.getElementById('auth-buttons');
+        const user = localStorage.getItem('isLoggedIn'); // Lấy tên user từ localStorage
+
+        if (user) {
+            // Nếu đã đăng nhập, thay thế nút Đăng ký/Đăng nhập bằng Dropdown User
+            authSection.innerHTML = `
+                <div class="dropdown">
+                    <button class="btn btn-outline-primary dropdown-toggle rounded-pill px-4 shadow-sm fw-bold" data-bs-toggle="dropdown">
+                        <i class="fa-solid fa-user-circle me-1"></i> Hi, ${user}
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 rounded-3">
+                        <li><a class="dropdown-item py-2" href="GioiThieu.html"><i class="fa-solid fa-id-card me-2 text-primary"></i>Cá nhân</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger py-2" href="#" onclick="logout()"><i class="fa-solid fa-power-off me-2"></i>Đăng xuất</a></li>
+                    </ul>
+                </div>`;
+        }
+
+        // --- 3. XỬ LÝ GỬI BÌNH LUẬN ---
+        const btnGui = document.getElementById('btnPost');
+        const commentInput = document.getElementById('commentInput');
+        const commentBox = document.getElementById('commentBox');
+
+        if (btnGui) {
+            btnGui.addEventListener('click', function() {
+                // Kiểm tra đăng nhập trước khi cho phép bình luận
+                if (!user) {
+                    alert("Bạn cần đăng nhập để thực hiện chức năng này!");
+                    window.location.href = 'DangNhap.html';
+                    return;
+                }
+
+                const content = commentInput.value.trim();
+                if (content === "") {
+                    alert("Vui lòng nhập nội dung bình luận!");
+                    return;
+                }
+
+                // Tạo cấu trúc HTML cho bình luận mới
+                const timeNow = new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' });
+                const newComment = `
+                    <div class="d-flex mb-3 p-3 bg-light rounded-3 shadow-sm border-start border-primary border-4 animate__animated animate__fadeIn">
+                        <div class="flex-shrink-0">
+                            <i class="fa-solid fa-circle-user fa-3x text-secondary"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <div class="fw-bold text-primary">
+                                ${user} 
+                                <span class="badge bg-secondary ms-2 fw-normal" style="font-size: 0.7rem;">${timeNow}</span>
+                            </div>
+                            <div class="text-dark mt-1">${content}</div>
+                        </div>
+                    </div>`;
+
+                // Xóa dòng "Chưa có bình luận" nếu đây là bình luận đầu tiên
+                if (commentBox.innerHTML.includes("Chưa có bình luận")) {
+                    commentBox.innerHTML = "";
+                }
+
+                // Đưa bình luận mới lên đầu danh sách
+                commentBox.innerHTML = newComment + commentBox.innerHTML;
+                
+                // Reset ô nhập liệu
+                commentInput.value = "";
+                alert("Cảm ơn " + user + " đã để lại ý kiến!");
+            });
+        }
+    });
+
+    // --- HÀM ĐĂNG XUẤT ---
+    function logout() {
+        if(confirm("Bạn muốn đăng xuất?")) {
+            localStorage.removeItem('isLoggedIn'); // Xóa trạng thái đăng nhập
+            location.reload(); // Tải lại trang để cập nhật giao diện
+        }
+    }
+</script>
+</body>
+</html>

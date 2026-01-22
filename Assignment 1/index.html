@@ -1,73 +1,258 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-    <title>Energy Pilates</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Trang xem phim</title>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg justify-center" style="background-color: #e3f2fd;">
+
+<body class="bg-light" style="font-family: 'Segoe UI', sans-serif;">
+
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm border-bottom" style="background-color: #e3f2fd;">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="https://via.placeholder.com/150x50?text=Logo" alt="Logo" style="width: 150px;">
+            <a class="navbar-brand" href="index.html">
+                <img src="/Assignment 1/images/Logo-phim.png" alt="Logo" width="130">
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav me-auto">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                         <a class="nav-link" href="#">Trang chủ</a>
+                        <a class="nav-link active fw-bold text-primary px-3" href="index.html"><i
+                                class="fa-solid fa-house me-1"></i>Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-solid fa-list"></i> Bài viết</a>
+                        <a class="nav-link px-3" href="DangPhim.html"><i
+                                class="fa-solid fa-cloud-arrow-up text-primary me-1"></i>Đăng phim</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-solid fa-film"></i> Video</a>
+                        <a class="nav-link px-3" href="BinhLuan.html"><i
+                                class="fa-solid fa-comments text-primary me-1"></i>Bình luận</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-solid fa-circle-info"></i> Giới thiệu</a>
+                        <a class="nav-link px-3" href="GioiThieu.html"><i
+                                class="fa-solid fa-address-card text-primary me-1"></i>Giới thiệu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-solid fa-calendar-days"></i> Sự kiện</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            <i class="fa-solid fa-user"></i> Tài khoản
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
-                            <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Đăng ký thành viên</a></li>
-                        </ul>
+                        <a class="nav-link px-3" href="DanhSach.html"><i
+                                class="fa-solid fa-address-card text-primary me-1"></i>Danh sách</a>
                     </li>
                 </ul>
 
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="Dangky.html">Đăng ký</a>
-                    </li>
-                    <li class="nav-item">
-                        <span class="nav-link d-none d-lg-block">|</span>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="DangNhap.html">Đăng nhập</a>
-                    </li>
-                </ul>
+                <div class="d-flex align-items-center" id="auth-buttons">
+                    <a href="Dangky.html" class="btn btn-white bg-white border rounded-pill px-4 me-2 shadow-sm">Đăng
+                        ký</a>
+                    <a href="DangNhap.html" class="btn btn-primary rounded-pill px-4 shadow-sm">Đăng nhập</a>
+                </div>
             </div>
         </div>
     </nav>
+
+    <div class="container mt-5">
+        <div class="bg-white rounded-4 shadow-sm p-4 p-md-5 mb-5 border-0">
+            <div class="row align-items-start">
+                <div class="col-md-4 text-center">
+                    <img src="/Assignment 1/images/Anh1.webp" class="img-fluid rounded-4 shadow-lg mb-4 mb-md-0"
+                        alt="Spider-Man" style="max-height: 550px; object-fit: cover;">
+                </div>
+                <div class="col-md-8 px-md-5">
+                    <span class="badge bg-danger mb-3 px-3 py-2 rounded-pill shadow-sm">Hot Trending</span>
+                    <h1 class="fw-bold text-dark display-5 mb-3">Người Nhện: Không Còn Nhà</h1>
+
+                    <div class="d-flex gap-4 mb-4 text-secondary fw-semibold border-bottom pb-3">
+                        <span><i class="fa-solid fa-star text-warning me-1"></i> 8.2/10</span>
+                        <span><i class="fa-solid fa-calendar me-1"></i> 2021</span>
+                        <span><i class="fa-solid fa-clock me-1"></i> 148 phút</span>
+                        <span class="text-primary"><i class="fa-solid fa-film me-1"></i> Marvel Studios</span>
+                    </div>
+
+                    <h5 class="fw-bold text-primary mb-3"><i class="fa-solid fa-circle-info me-2"></i>Nội dung phim:
+                    </h5>
+                    <div class="text-secondary fs-5 lh-lg">
+                        <p class="mb-3" style="text-align: justify;">
+                            Sau khi danh tính Người Nhện bị <strong>Mysterio</strong> tiết lộ cho cả thế giới ở phần
+                            trước, cuộc sống của <strong>Peter Parker</strong> hoàn toàn bị đảo lộn. Không chỉ Peter, mà
+                            cả người thân của cậu là dì May, người yêu MJ và cậu bạn thân Ned cũng bị lôi vào những rắc
+                            rối pháp lý và sự soi mói của dư luận.
+                        </p>
+                        <p class="mb-3" style="text-align: justify;">
+                            Tuyệt vọng, Peter tìm đến <strong>Phù Thủy Tối Thượng Doctor Strange</strong> với hy vọng
+                            dùng phép thuật để khiến cả thế giới quên đi danh tính thực sự của mình. Tuy nhiên, trong
+                            quá trình thực hiện bùa chú, Peter đã vô tình làm nhiễu loạn phép thuật vì sự thiếu tập
+                            trung, dẫn đến việc phá vỡ ranh giới giữa các vũ trụ.
+                        </p>
+                        <p class="mb-4" style="text-align: justify;">
+                            Hậu quả là những kẻ thù nguy hiểm từ các thực tại khác như <strong>Green Goblin, Doc Ock,
+                                Electro, Sandman và Lizard</strong> đã tràn qua vũ trụ hiện tại. Peter Parker phải đối
+                            mặt với thử thách lớn nhất từ trước đến nay, buộc cậu phải tìm cách sửa chữa sai lầm và hiểu
+                            rõ hơn về ý nghĩa của câu nói: <em>"Sức mạnh càng lớn, trách nhiệm càng cao"</em>.
+                        </p>
+                    </div>
+
+                    <div class="d-flex gap-2 justify-content-center">
+                        <button class="btn btn-primary rounded-pill px-4 fw-bold" onclick="viewSpiderMan()">
+                            <i class="fa-solid fa-play me-1"></i> XEM NGAY
+                        </button>
+                        <button class="btn btn-outline-secondary rounded-circle" onclick="saveFixedMovie()"
+                            title="Lưu vào danh sách">
+                            <i class="fa-solid fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <div
+                class="d-flex justify-content-between align-items-center mb-4 border-start border-primary border-4 ps-3">
+                <h3 class="fw-bold text-dark mb-0 text-uppercase">
+                    Phim mới cập nhật
+                </h3>
+                <a href="#" class="btn btn-link text-decoration-none fw-bold">Xem tất cả <i
+                        class="fa-solid fa-chevron-right ms-1"></i></a>
+            </div>
+
+            <div class="row g-4" id="dynamicMovieContainer">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.getElementById('dynamicMovieContainer');
+            const movies = JSON.parse(localStorage.getItem('userMovies')) || [];
+
+            // 1. Hiển thị danh sách phim mới đăng
+            if (movies.length === 0) {
+                container.innerHTML = '<div class="col-12 text-center text-muted py-5 fw-semibold fs-5">Chưa có phim mới nào được đăng.</div>';
+            } else {
+                movies.forEach((movie, index) => {
+                    container.innerHTML += `
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative">
+                            <button onclick="deletePublishedMovie(${index})" class="btn btn-danger btn-sm position-absolute top-0 end-0 m-2 rounded-circle shadow-sm" style="z-index: 10; width: 30px; height: 30px;">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+
+                            <div class="position-relative">
+                                <img src="${movie.image}" class="card-img-top" style="height: 320px; object-fit: cover;" alt="${movie.title}">
+                                <div class="position-absolute bottom-0 start-0 m-2">
+                                    <span class="badge bg-dark opacity-75 border">HD</span>
+                                </div>
+                            </div>
+                            <div class="card-body bg-white p-3">
+                                <h6 class="fw-bold text-dark text-truncate mb-1">${movie.title}</h6>
+                                <p class="small text-muted mb-3"><i class="fa-solid fa-tag me-1"></i>Hành động, Phiêu lưu</p>
+                                <div class="d-grid gap-2">
+                                    <button onclick="viewUserMovie(${index})" class="btn btn-primary btn-sm rounded-pill fw-bold">
+                                        <i class="fa-solid fa-play me-1"></i>Xem phim
+                                    </button>
+                                    <button onclick="addToWatchList(${index})" class="btn btn-outline-warning btn-sm rounded-pill fw-bold border-2 text-dark">
+                                        <i class="fa-solid fa-plus me-1"></i>Lưu danh sách
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+                });
+            }
+
+            // 2. Xử lý trạng thái Đăng nhập trên Navbar
+            const authSection = document.getElementById('auth-buttons');
+            const user = localStorage.getItem('isLoggedIn');
+            if (user) {
+                authSection.innerHTML = `
+                <div class="dropdown">
+                    <button class="btn btn-outline-primary dropdown-toggle rounded-pill px-4 shadow-sm fw-bold" data-bs-toggle="dropdown">
+                        <i class="fa-solid fa-user-circle me-1"></i> Hi, ${user}
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 rounded-3 p-2">
+                        <li><a class="dropdown-item py-2" href="GioiThieu.html"><i class="fa-solid fa-id-card me-2 text-primary"></i>Cá nhân</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger py-2" href="#" onclick="logout()"><i class="fa-solid fa-power-off me-2"></i>Đăng xuất</a></li>
+                    </ul>
+                </div>`;
+            }
+        });
+
+        // --- CÁC HÀM XỬ LÝ DỮ LIỆU ---
+
+        // Xóa phim đã đăng khỏi trang chủ (dữ liệu gốc)
+        function deletePublishedMovie(index) {
+            if (confirm("Bạn có chắc chắn muốn xóa phim này khỏi danh sách phim mới?")) {
+                let movies = JSON.parse(localStorage.getItem('userMovies')) || [];
+                movies.splice(index, 1);
+                localStorage.setItem('userMovies', JSON.stringify(movies));
+                location.reload();
+            }
+        }
+
+        // LƯU PHIM VÀO DANH SÁCH RIÊNG (Watchlist)
+        function addToWatchList(index) {
+            const movies = JSON.parse(localStorage.getItem('userMovies'));
+            let list = JSON.parse(localStorage.getItem('myWatchList')) || [];
+
+            // Kiểm tra trùng lặp dựa trên tiêu đề
+            if (!list.some(m => m.title === movies[index].title)) {
+                list.push({
+                    title: movies[index].title,
+                    image: movies[index].image,
+                    dateSaved: new Date().toLocaleDateString('vi-VN')
+                });
+                localStorage.setItem('myWatchList', JSON.stringify(list));
+                alert("Đã thêm '" + movies[index].title + "' vào danh sách của bạn!");
+            } else {
+                alert("Phim này đã có trong danh sách lưu rồi!");
+            }
+        }
+
+        // LƯU PHIM HOT (Nút Bookmark trên Banner)
+        function saveFixedMovie() {
+            let list = JSON.parse(localStorage.getItem('myWatchList')) || [];
+            const spider = {
+                title: "Người Nhện: Không Còn Nhà",
+                image: "/Assignment 1/images/Anh1.webp",
+                dateSaved: new Date().toLocaleDateString('vi-VN')
+            };
+
+            if (!list.some(m => m.title === spider.title)) {
+                list.push(spider);
+                localStorage.setItem('myWatchList', JSON.stringify(list));
+                alert("Đã lưu phim 'Người Nhện' vào danh sách!");
+            } else {
+                alert("Phim này đã có trong danh sách lưu rồi!");
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            location.reload();
+        }
+
+        function viewUserMovie(index) {
+            const list = JSON.parse(localStorage.getItem('userMovies'));
+            sessionStorage.setItem('selectedMovie', JSON.stringify(list[index]));
+            window.location.href = 'BinhLuan.html';
+        }
+
+        function viewSpiderMan() {
+            const spiderMan = {
+                title: "Người Nhện: Không Còn Nhà",
+                content: "Peter Parker đối mặt với thử thách lớn nhất khi đa vũ trụ mở ra...",
+                image: "/Assignment 1/images/Anh1.webp"
+            };
+            sessionStorage.setItem('selectedMovie', JSON.stringify(spiderMan));
+            window.location.href = 'BinhLuan.html';
+        }
+    </script>
 </body>
 
 </html>
