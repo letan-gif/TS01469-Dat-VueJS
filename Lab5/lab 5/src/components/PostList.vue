@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>Danh sách bai viết</h2>
+        <h2>Danh sách bài viết</h2>
         <div v-for="(post, index) in posts" :key="index" :class="{'highlighted': post.title.length > 20}" 
             :style="{backgroundColor: post.backgroundColor, color: post.textColor}" class="post">
             <h3 class="text-success">{{ post.title }}</h3>
