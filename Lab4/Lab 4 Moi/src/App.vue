@@ -1,8 +1,5 @@
 <script setup>
-// import HelloWorld from './components/Test.vue'
-import Test2 from './components/Test2.vue'
-import Test3 from './components/Test3.vue'
-import Test4 from './components/Test4.vue'
+import Bai4 from './components/Bai4.vue'
 </script>
 
 <template>
@@ -14,13 +11,8 @@ import Test4 from './components/Test4.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="10 - Le Tan Dat" /> -->
-
-  <!-- <Test2/> -->
-
-   <Test3/>
-
-    <!-- <Test4/> -->
+  <HelloWorld msg="Vite + Vue" /> -->
+  <Bai4/>
 </template>
 
 <style scoped>
@@ -37,4 +29,3 @@ import Test4 from './components/Test4.vue'
   filter: drop-shadow(0 0 2em #42b883aa);
 }
 </style>
-

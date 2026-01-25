@@ -1,5 +1,5 @@
 {
-  "name": "slide-4",
+  "name": "slide-5",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "bootstrap": "^5.3.8",
     "vue": "^3.5.24"
   },
   "devDependencies": {
