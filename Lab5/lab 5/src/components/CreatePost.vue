@@ -7,7 +7,7 @@
     <br>
     <textarea v-model="content" placeholder="Nội dung bài viết"></textarea>
     <br>
-    <button @click="submitPost">Đăng bài</button>
+    <button class="btn-submit" @click="submitPost">Đăng bài</button>
   </div>
 </template>
 <script setup>
@@ -49,7 +49,7 @@ textarea {
   border: 1px solid #ddd;
 }
 
-button {
+.btn-submit{
   padding: 10px 20px;
   background-color: #3498db;
   color: white;
@@ -57,5 +57,6 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-weight: 500;
+  border-radius: 5px;
 }
 </style>

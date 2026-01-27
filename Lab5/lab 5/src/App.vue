@@ -45,6 +45,6 @@ function addPost(post) {
 .section-divider {
   border: none;
   border-top: 1px solid #ddd;
-  margin: 30px 0;
+  margin: 2px;
 }
 </style>
