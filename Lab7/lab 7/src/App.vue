@@ -23,13 +23,13 @@ function handleLoginSuccess(username) {
 <!-- <Bai2/> -->
 <!-- <Bai3/> -->
   <div>
-    <!-- Nếu người dùng chưa đăng nhập, hiển thị form đăng nhập -->
+    <!--Nếu người dùng chưa đăng nhập, hiển thị form đăng nhập -->
     <LoginComponent
       v-if="!isLoggedIn"
       @loggedIn="handleLoginSuccess"
-    />
+    /> 
 
-    <!-- Nếu người dùng đã đăng nhập, hiển thị component bình luận -->
+    <!--Nếu người dùng đã đăng nhập, hiển thị component bình luận -->
     <CommentComponent
       v-else
       :username="loggedInUser"
