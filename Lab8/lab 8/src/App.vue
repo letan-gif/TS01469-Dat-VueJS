@@ -18,7 +18,6 @@
 </template>
 
 <style>
-/* Thêm một chút CSS để giao diện dễ nhìn hơn */
 #app {
   font-family: Arial, sans-serif;
   max-width: 900px;
@@ -39,7 +38,6 @@
   color: #2c3e50;
 }
 
-/* Class mặc định của Vue Router khi một link đang được kích hoạt */
 .router-link-active {
   color: #42b983 !important;
   border-bottom: 2px solid #42b983;

@@ -19,8 +19,8 @@ const routes = [
     path: "/profile", 
     name: "UserProfile", 
     component: UserProfile,
-    alias: "/me", // Alias route [cite: 46, 89]
-    children: [ // Routes lồng nhau [cite: 31, 91]
+    alias: "/me", 
+    children: [ 
       { path: "info", name: "UserProfileInfo", component: UserProfileInfo },
       { path: "settings", name: "UserProfileSettings", component: UserProfileSettings }
     ]
@@ -30,7 +30,7 @@ const routes = [
     path: "/dashboard", 
     name: "Dashboard", 
     component: Dashboard,
-    meta: { requiresAuth: true } // Đánh dấu route cần bảo vệ [cite: 117]
+    meta: { requiresAuth: true }
   }
 ];
 
@@ -39,10 +39,9 @@ const router = createRouter({
   routes,
 });
 
-// Route Guard để bảo mật [cite: 41, 130]
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth) && !isAuthenticated) {
-    next({ name: "Login" }); // Chuyển hướng về Login nếu chưa đăng nhập [cite: 41, 145]
+    next({ name: "Login" });
   } else {
     next();
   }
