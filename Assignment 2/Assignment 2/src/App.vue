@@ -10,28 +10,28 @@
         </RouterLink>
 
         <!-- Menu chung -->
-        <RouterLink to="/" class="btn nav-link">Trang chủ</RouterLink>
-        <RouterLink to="/chapters" class="btn nav-link">Danh sách chương</RouterLink>
-        <RouterLink to="/comments" class="btn nav-link">Bình luận</RouterLink>
+        <RouterLink to="/" class="btn nav-link"><i class="fa-solid fa-house"></i> Trang chủ</RouterLink>
+        <RouterLink to="/chapters" class="btn nav-link"><i class="fa-solid fa-file"></i> Danh sách chương</RouterLink>
+        <RouterLink to="/comments" class="btn nav-link"><i class="fa-solid fa-comment"></i> Bình luận</RouterLink>
 
         <!-- Khi đã đăng nhập -->
         <template v-if="currentUser">
-          <RouterLink to="/add-story" class="btn nav-link">Đăng truyện</RouterLink>
-          <RouterLink to="/profile" class="btn nav-link">Cá nhân</RouterLink>
+          <RouterLink to="/add-story" class="btn nav-link"><i class="fa-solid fa-upload"></i> Đăng truyện</RouterLink>
+          <RouterLink to="/profile" class="btn nav-link"><i class="fa-solid fa-circle-user"></i> Cá nhân</RouterLink>
 
           <span class="fw-bold text-primary">{{ currentUser.email }}</span>
           <button class="btn btn-danger btn-sm" @click="logout">
-            Đăng xuất
+           Đăng xuất
           </button>
         </template>
 
         <!-- Khi chưa đăng nhập -->
         <template v-else>
           <RouterLink to="/register" class="btn btn-outline-primary btn-sm">
-            Đăng ký
+            <i class="fa-solid fa-address-card"></i> Đăng ký
           </RouterLink>
           <RouterLink to="/login" class="btn btn-primary btn-sm">
-            Đăng nhập
+            <i class="fa-solid fa-arrow-right-to-bracket"></i> Đăng nhập
           </RouterLink>
         </template>
 
