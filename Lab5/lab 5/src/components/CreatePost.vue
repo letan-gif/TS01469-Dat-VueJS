@@ -49,14 +49,13 @@ textarea {
   border: 1px solid #ddd;
 }
 
-.btn-submit{
+.btn-submit {
   padding: 10px 20px;
   background-color: #3498db;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-weight: 500;
-  border-radius: 5px;
+  
 }
 </style>
